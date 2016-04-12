@@ -1,11 +1,13 @@
 package common;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class Startup {
@@ -40,7 +42,7 @@ public class Startup {
           Employee e3 = new Employee("Ree","Jeff","333-33-3333");
           Employee e4 = new Employee("Smith","Bobby","111-11-1111");
           
-          Map<String, Employee> emps = new HashMap<>();
+          Map<String, Employee> emps = new TreeMap<>();//HashMap<>();
           
           emps.put("emp1", e1);
           emps.put("emp2", e2);
@@ -57,6 +59,13 @@ public class Startup {
             Employee found = (Employee)emps.get(key);
             System.out.println(found.toString());
         }
+        
+        Collection<Employee> values = emps.values();
+        for(Employee emp : values) {
+            System.out.println(emp);
+        }
+        
+        
         
         Set<Employee> set = new TreeSet<>();
         
